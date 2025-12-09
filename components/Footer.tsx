@@ -11,7 +11,7 @@ function Footer() {
         <div className='flex justify-center space-x-3 text-2xl'>
             <Link href={"https://github.com/fauzysan"}><div><SiGithub /></div></Link>
             <Link href={"https://instagram.com/fauzyhafidz"}><div><SiInstagram /></div></Link>
-            <Link href={"https://www.linkedin.com/in/fauzi-hafidz-077230240/"}><div><SiLinkedin /></div></Link>
+            <Link href={"#"}><div><SiLinkedin /></div></Link>
 
         </div>
     </div>
