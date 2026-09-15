@@ -3,19 +3,19 @@ import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
-import Quotes from "@/components/Quotes"
+import Quotes from "@/components/Quotes";
+import About from "@/components/About";
+
 export default function Home() {
   return (
-    <main className="bg-black">
-      <div className="text-white">
-        <Navbar />
-        <Hero />
-        <Skills />
-        <Projects />
-        <Quotes />        
-        <Footer />
-
-      </div>
+    <main className="min-h-screen bg-black text-white">
+      <Navbar />
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Quotes />
+      <Footer />
     </main>
   );
 }

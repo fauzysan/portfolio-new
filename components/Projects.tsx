@@ -1,36 +1,49 @@
-"use client"
-import React from 'react'
 import Link from "next/link";
-import livechat  from "@/img/livechat.png"
-import { PinContainer } from './ui/3d-pin';
+import livechat from "@/img/livechat.png";
+
+const projects = [
+  {
+    title: "Realtime LiveChat",
+    description: "A realtime chat application built with Next.js and Supabase.",
+    image: livechat,
+    href: "https://livechat-nine.vercel.app/",
+  },
+];
+
 function Projects() {
   return (
-    <div id='projects'>
-      <div className='text-4xl text-center font-bold m-10 max-w-5xl mx-auto'>
-        Projects
+    <section id="projects" className="mx-auto max-w-5xl px-6 py-24">
+      <div className="text-center">
+        <p className="text-sm font-semibold uppercase tracking-widest text-sky-400">My Work</p>
+        <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Projects</h2>
       </div>
-      <div className='flex mx-auto justify-center max-md:flex-col gap-8 flex-wrap'>
-        <PinContainer
-          title="/livechat-nine.vercel.app/"
-          href="https://livechat-nine.vercel.app/"
-        >
-          <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
-            <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
-              Realtime LiveChat
-            </h3>
-            <div className="text-base !m-0 !p-0 font-normal">
-              <span className="text-slate-500 ">
-                This application made with nextjs and supabase db.
+      <div className="mt-10 grid gap-8 sm:grid-cols-2">
+        {projects.map((project) => (
+          <Link
+            key={project.title}
+            href={project.href}
+            target="_blank"
+            className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-all duration-300 hover:-translate-y-1 hover:border-sky-400/40"
+          >
+            <div className="overflow-hidden">
+              <img
+                src={project.image.src}
+                alt={project.title}
+                className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-lg font-semibold text-white">{project.title}</h3>
+              <p className="mt-2 text-sm text-neutral-400">{project.description}</p>
+              <span className="mt-4 inline-block text-sm font-medium text-sky-400">
+                Visit site &rarr;
               </span>
             </div>
-            <div className="flex flex-1 w-full rounded-lg mt-4">
-              <img src={livechat.src} alt="" />
-            </div>
-          </div>
-        </PinContainer>
+          </Link>
+        ))}
       </div>
-    </div>
-  )
+    </section>
+  );
 }
 
-export default Projects
+export default Projects;
