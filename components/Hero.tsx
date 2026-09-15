@@ -27,9 +27,9 @@ const Hero = () => {
         fill="white"
         />
         <div className='mx-auto flex flex-col'>
-            <p className='font-semibold text-2xl lg:text-4xl'>Hello, I'm <br /></p>
+            <p className='font-semibold text-2xl lg:text-4xl'>Hello, I&apos;m <br /></p>
             <TypewriterEffectSmooth words={word}/>
-            <p className='text-xl'>Based in Indonesia. I'm fullstack developer passionate <br/>about building a modern web application.</p>
+            <p className='text-xl'>Based in Indonesia. I&apos;m fullstack developer passionate <br/>about building a modern web application.</p>
             <Link href={"mailto:fauzyhafidz123@gmail.com"} className='inline-block my-5'>
               <Button className='hover:text-slate-400'>
                 <h1 className='text-2xl font-bold'>Contact Me</h1>

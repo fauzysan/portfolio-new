@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Fauzi Hafidz | FullStack",
   description: "Portfolio",
-  icons: "/icon.jpg"
+  icons: "/icon.png"
 };
 
 export default function RootLayout({
