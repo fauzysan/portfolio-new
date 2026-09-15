@@ -1,6 +1,4 @@
 import { cn } from "@/utils/cn";
-import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
 import { IconType } from "react-icons";
 
 export const HoverEffect = ({
@@ -13,49 +11,25 @@ export const HoverEffect = ({
   }[];
   className?: string;
 }) => {
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10",
+        "mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4",
         className
       )}
     >
-      {items.map((item, idx) => {
+      {items.map((item) => {
         const Icon = item.Icon;
-        return <div
-          key={item.title}
-          className="relative group  block p-2 h-full w-full"
-          onMouseEnter={() => setHoveredIndex(idx)}
-          onMouseLeave={() => setHoveredIndex(null)}
-        >
-          <AnimatePresence>
-            {hoveredIndex === idx && (
-              <motion.span
-                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-lg"
-                layoutId="hoverBackground"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: { duration: 0.15 },
-                }}
-                exit={{
-                  opacity: 0,
-                  transition: { duration: 0.15, delay: 0.2 },
-                }}
-              />
-            )}
-          </AnimatePresence>
-          <div className="rounded-md w-full p-4 overflow-hidden bg-black group-hover:ring-2 ring-blue-300 relative z-20 transition-all duration-500 cursor-pointer">
-            <div className="py-10 z-50 relative space-y-5">
-                <Icon className="w-8 h-8 mx-auto"/>
-                <p className="text-2xl font-bold text-center text-gray-300">{item.title}</p>
-            </div>
-
+        return (
+          <div
+            key={item.title}
+            className="group flex flex-col items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-sky-400/40 hover:bg-white/[0.06]"
+          >
+            <Icon className="h-8 w-8 text-neutral-400 transition-colors group-hover:text-sky-400" />
+            <p className="text-sm font-medium text-neutral-300">{item.title}</p>
           </div>
-        </div>
-})}
+        );
+      })}
     </div>
   );
 };

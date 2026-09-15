@@ -1,7 +1,7 @@
 "use client"
-import React from 'react'
 import { HoverEffect } from './ui/card-hover-effect';
-import {SiCplusplus, SiDocker, SiGit, SiMysql, SiNextdotjs, SiNodedotjs, SiPython, SiReact, SiTailwindcss } from 'react-icons/si'
+import { SiCplusplus, SiDocker, SiGit, SiMysql, SiNextdotjs, SiNodedotjs, SiPython, SiReact, SiTailwindcss } from 'react-icons/si'
+
 function Skills() {
     const skills = [
         {
@@ -42,14 +42,13 @@ function Skills() {
         },
       ];
   return (
-    <div id='Skills'>
-        <div className='text-center text-4xl font-bold m-10 max-w-5xl mx-auto'>
-            Skills
+    <section id='skills' className="mx-auto max-w-5xl px-6 py-24">
+        <div className="text-center">
+          <p className="text-sm font-semibold uppercase tracking-widest text-sky-400">What I Work With</p>
+          <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Skills</h2>
         </div>
-        <div className="max-w-5xl mx-auto px-8">
         <HoverEffect items={skills} />
-    </div>
-    </div>
+    </section>
   )
 }
 
